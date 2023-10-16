@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lvm l1_2", "labs nau\lvm l1_2.csproj", "{237AD9CB-5CDE-4189-BBCE-A6B99C6FE4C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPLR1", "OOPLR1\OOPLR1\OOPLR1.csproj", "{F44D2D88-125F-4371-9C4F-5867C93BF6D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{237AD9CB-5CDE-4189-BBCE-A6B99C6FE4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{237AD9CB-5CDE-4189-BBCE-A6B99C6FE4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{237AD9CB-5CDE-4189-BBCE-A6B99C6FE4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F44D2D88-125F-4371-9C4F-5867C93BF6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F44D2D88-125F-4371-9C4F-5867C93BF6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F44D2D88-125F-4371-9C4F-5867C93BF6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F44D2D88-125F-4371-9C4F-5867C93BF6D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
