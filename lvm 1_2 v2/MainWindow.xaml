@@ -1,0 +1,57 @@
+﻿<Window x:Class="lvm_1_2_v2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lvm_1_2_v2"
+        mc:Ignorable="d"
+        Title="Lab1_2" Height="450" Width="800">
+
+
+    <DockPanel LastChildFill="False" VerticalAlignment="Top" HorizontalAlignment="Center" Height="350" Width="600" Margin="20" >
+        <Button Content="Get_Text" Width="200" DockPanel.Dock="Top" Click="Get_text"/>
+        <Grid DockPanel.Dock="Top"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="464" Height="28">
+            <Grid.ColumnDefinitions
+                >
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Enter a message" Grid.Column="0" ></Label>
+            <TextBox VerticalAlignment="Center" Grid.Column="1" x:Name="MessageText"    ></TextBox>
+            <Button x:Name="Show_button" Content="Show Message" Grid.Column="2" Click="Show_msg"  />
+        </Grid>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Button Content="Default Message" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Default_msg" ></Button>
+            <Button Content="Clear Message" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Clear_msg" />
+        </StackPanel>
+
+        <Grid DockPanel.Dock="Top"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="464"  Margin="5" Height="28">
+            <Grid.ColumnDefinitions
+        >
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Run a program" Grid.Column="0"></Label>
+            <ComboBox Grid.Column="1" VerticalAlignment="Top" x:Name="ComboBox" IsEditable="True" />
+            <Button x:Name="Run_button" Content="Run a program"  Grid.Column="2" Click="Run_program"/>
+        </Grid>
+        <GroupBox Header="Show Actions" DockPanel.Dock="Right" >
+            <StackPanel>
+                <CheckBox Content="Show Message Action" IsChecked="True" Checked="Msg_show_check" Unchecked="Msg_show_uncheck" />
+                <CheckBox Content="Show Program Action" IsChecked="True"  Checked="Program_show_check" Unchecked="Program_show_uncheck" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Enable Actions" DockPanel.Dock="Left"  >
+            <StackPanel>
+                <CheckBox Content="Enable Message Action" IsChecked="True" Checked="Msg_action_check" Unchecked="Msg_action_uncheck" />
+                <CheckBox Content="Enable Program Action" IsChecked="True" Checked="Program_action_check" Unchecked="Program_action_uncheck" />
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Exit" Width="200" DockPanel.Dock="Bottom" Click="Exit"/>
+    </DockPanel>
+
+
+
+</Window>
