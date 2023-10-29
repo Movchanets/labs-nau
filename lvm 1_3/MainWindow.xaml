@@ -5,12 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lvm_1_3"
         mc:Ignorable="d"
-        Title="Lvm1_3" Height="450" Width="800">
+        Title="Lvm1_3" Height="450" Width="800" >
     <Window.CommandBindings>
-        <!-- CommandBindings for Cut, Copy, and Paste -->
+    
         <CommandBinding Command="ApplicationCommands.Cut" Executed="Cut_Executed" />
         <CommandBinding Command="ApplicationCommands.Copy" Executed="Copy_Executed" />
         <CommandBinding Command="ApplicationCommands.Paste" Executed="Paste_Executed" />
+        <CommandBinding Command="{x:Static local:MainWindow.ExitCommand}" 
+                     Executed="Exit_Executed"/>
+        <CommandBinding Command="{x:Static local:MainWindow.MessageCommand}" 
+             Executed="Message_Executed"/>
+        <CommandBinding Command="{x:Static local:MainWindow.AboutCommand}" 
+      Executed="About_Executed"/>
+        <CommandBinding  Command="{x:Static local:MainWindow.CheckCommand}"
+Executed="Check_Executed"/>
+       
     </Window.CommandBindings>
     <Window.Resources>
         <ContextMenu x:Key="ContextMenuResource">
@@ -31,8 +40,8 @@
             <!-- Create a ContextMenu that duplicates the File Menu Items -->
             <ContextMenu>
                 <MenuItem Header="File">
-                    <MenuItem Header="Message" Click="Message_Click" />
-                    <MenuItem Header="Check" Click="Check_Click"  />
+                    <MenuItem Header="Message" x:Name="msg" Click="Message_Click" />
+                    <MenuItem Header="Check" Click="Check_Click" x:Name="check"  />
                     <Separator />
                     <MenuItem Header="Exit" Click="Exit_Click"  />
                 </MenuItem>
@@ -41,22 +50,22 @@
         <Menu Grid.Column="0">
             <!-- File Menu -->
             <MenuItem Header="File">
-                <MenuItem Header="Message" Click="Message_Click"  />
-                <MenuItem Header="Check" Click="Check_Click" />
+                <MenuItem Header="Message" x:Name="msg1" Command="{x:Static local:MainWindow.MessageCommand}" InputGestureText="Ctrl+M" Click="Message_Click"  />
+                <MenuItem Header="Check" x:Name="check1" Command="{x:Static local:MainWindow.CheckCommand}" Click="Check_Click" InputGestureText="Ctrl+K" />
                 <Separator />
-                <MenuItem Header="Exit"  Click="Exit_Click" />
+                <MenuItem Header="Exit"  Click="Exit_Click" Command="{x:Static local:MainWindow.ExitCommand}" InputGestureText="Ctrl+E" />
             </MenuItem>
             <!-- Help Menu -->
             <MenuItem Header="Help">
-                <MenuItem Header="About" Click="About_Click" />
+                <MenuItem Header="About" Command="{x:Static local:MainWindow.AboutCommand}" Click="About_Click" InputGestureText="Ctrl+A" />
             </MenuItem>
-            <MenuItem >
+            <MenuItem  Click="About_Click">
                 <MenuItem.Icon>
                     <Image Source="{StaticResource AboutIcon}" />
                 </MenuItem.Icon>
             </MenuItem>
 
-            <MenuItem>
+            <MenuItem Click="Message_Click">
                 <MenuItem.Icon>
                     <Image Source="{StaticResource MessageIcon}" />
                 </MenuItem.Icon>

@@ -20,9 +20,20 @@ namespace lvm_1_3
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static RoutedCommand ExitCommand = new RoutedCommand();
+        public static RoutedCommand MessageCommand = new RoutedCommand();
+        public static RoutedCommand AboutCommand = new RoutedCommand();
+        public static RoutedCommand CheckCommand = new RoutedCommand();
+        public bool IsChecked { get; set; } = false;
         public MainWindow()
         {
+            
+
             InitializeComponent();
+            ExitCommand.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
+            MessageCommand.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Control));
+            AboutCommand.InputGestures.Add(new KeyGesture(Key.A, ModifierKeys.Control));
+            CheckCommand.InputGestures.Add(new KeyGesture(Key.K, ModifierKeys.Control));
         }
 
 
@@ -70,6 +81,28 @@ namespace lvm_1_3
         private void Paste_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             MessageBox.Show("The Paste command was invoked.");
+        }
+        private void Exit_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        private void Message_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if(IsChecked == false) { 
+            MessageBox.Show("This is a message.");
+        }
+        }
+        private void About_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("This is your application's About dialog.");
+        }
+        private void Check_Executed(object sender, ExecutedRoutedEventArgs e)
+        {   IsChecked = !IsChecked;
+
+            check.IsChecked = IsChecked;
+            check1.IsChecked = IsChecked;
+            msg1.IsEnabled = !IsChecked;
+            msg.IsEnabled = !IsChecked;
         }
     }
 }
