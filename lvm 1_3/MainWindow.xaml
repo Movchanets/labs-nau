@@ -1,0 +1,82 @@
+﻿<Window x:Class="lvm_1_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lvm_1_3"
+        mc:Ignorable="d"
+        Title="Lvm1_3" Height="450" Width="800">
+    <Window.CommandBindings>
+        <!-- CommandBindings for Cut, Copy, and Paste -->
+        <CommandBinding Command="ApplicationCommands.Cut" Executed="Cut_Executed" />
+        <CommandBinding Command="ApplicationCommands.Copy" Executed="Copy_Executed" />
+        <CommandBinding Command="ApplicationCommands.Paste" Executed="Paste_Executed" />
+    </Window.CommandBindings>
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenuResource">
+            <MenuItem Header="Cut" Command="ApplicationCommands.Cut" />
+            <MenuItem Header="Copy" Command="ApplicationCommands.Copy" />
+            <MenuItem Header="Paste" Command="ApplicationCommands.Paste" />
+        </ContextMenu>
+        <BitmapImage x:Key="AboutIcon" UriSource="about.png" />
+        <BitmapImage x:Key="MessageIcon" UriSource="message.png" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.ContextMenu>
+            <!-- Create a ContextMenu that duplicates the File Menu Items -->
+            <ContextMenu>
+                <MenuItem Header="File">
+                    <MenuItem Header="Message" Click="Message_Click" />
+                    <MenuItem Header="Check" Click="Check_Click"  />
+                    <Separator />
+                    <MenuItem Header="Exit" Click="Exit_Click"  />
+                </MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <Menu Grid.Column="0">
+            <!-- File Menu -->
+            <MenuItem Header="File">
+                <MenuItem Header="Message" Click="Message_Click"  />
+                <MenuItem Header="Check" Click="Check_Click" />
+                <Separator />
+                <MenuItem Header="Exit"  Click="Exit_Click" />
+            </MenuItem>
+            <!-- Help Menu -->
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Click="About_Click" />
+            </MenuItem>
+            <MenuItem >
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource AboutIcon}" />
+                </MenuItem.Icon>
+            </MenuItem>
+
+            <MenuItem>
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource MessageIcon}" />
+                </MenuItem.Icon>
+            </MenuItem>
+
+            <ToolBar>
+                <!-- Duplicate File Menu Items on the Toolbar -->
+                <Button Content="Message" x:Name="toolbar_click" Click="Message_Click" />
+                <CheckBox Content="Check" x:Name="toolbar_check" Checked="Check_toolbar" Unchecked="Uncheck_toolbar"/>
+                <Separator />
+                <Button Content="Exit" Click="Exit_Click" />
+            </ToolBar>
+        </Menu>
+       
+        
+        <TextBox Text="Right-click here to open second context menu" Grid.Column="1">
+            <TextBox.ContextMenu>
+                <StaticResource ResourceKey="ContextMenuResource" />
+            </TextBox.ContextMenu>
+        </TextBox>
+
+    </Grid>
+</Window>
