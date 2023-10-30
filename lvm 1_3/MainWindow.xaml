@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Lvm1_3" Height="450" Width="800" >
     <Window.CommandBindings>
-    
+
         <CommandBinding Command="ApplicationCommands.Cut" Executed="Cut_Executed" />
         <CommandBinding Command="ApplicationCommands.Copy" Executed="Copy_Executed" />
         <CommandBinding Command="ApplicationCommands.Paste" Executed="Paste_Executed" />
