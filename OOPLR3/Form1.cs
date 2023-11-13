@@ -73,9 +73,6 @@ namespace OOPLR3
             MessageBox.Show($"Кількість об'єктів {Product.Count}");
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show($"Кількість об'єктів {Product.Count}");
-        }
+      
     }
 }
