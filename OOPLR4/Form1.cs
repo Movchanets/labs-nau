@@ -16,7 +16,11 @@ namespace OOPLR3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Product product = new Product();
+            Vegetable vegetable = new Vegetable();
+            Fruit fruit = new Fruit();
+            Product product = vegetable;
+            MessageBox.Show(product.Info());
+            product = fruit;
             MessageBox.Show(product.Info());
         }
 
@@ -73,9 +77,43 @@ namespace OOPLR3
             MessageBox.Show($"Кількість об'єктів {Product.Count}");
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Кількість об'єктів {Product.Count}");
+            Button a = new Button();
+            Random rand = new Random();
+            a.Location = new Point(rand.Next(0, 500), rand.Next(0, 500));
+            a.Size = new Size(100, 50);
+            a.Text = ((Button)sender).Text;
+            a.Click += button8_Click;
+            a.Parent = this;
+            a.Show();
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+            Random rand = new Random();
+            foreach (Control control in Controls)
+            {
+                if (control is Button && control != sender)
+                {
+                    control.Location = new Point(rand.Next(0, 500), rand.Next(0, 500));
+                }
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+            foreach (Control control in Controls)
+            {
+                if (control is Button && control != sender)
+                {
+                    control.Left -= 10;
+                }
+            }
+
         }
     }
 }
