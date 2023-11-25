@@ -1,0 +1,38 @@
+﻿<Window x:Class="lvm_1_4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lvm_1_4"
+        mc:Ignorable="d"
+        Title="Lvm1_4" Height="400" Width="400">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="Button_YesNoCancel" Grid.Row="0" Grid.Column="0" Height="30" Width="150" Click="YesNoCancel_Click">Yes,No,Cancel</Button>
+        <Button x:Name="Button_AbortRetryIgnore" Grid.Row="0" Grid.Column="1" Height="30" Width="150" Click="AbortRetryIgnore_Click">Abort,Retry,Ignore</Button>
+
+        <Button x:Name="Button_Open" Grid.Row="1" Grid.Column="0"   Height="30" Width="120" Click="Open_Click" Content="File Open"/>
+        <Button x:Name="Button_SaveAs" Grid.Row="1" Grid.Column="1"  Height="30" Width="120" Click="SaveAs_Click" Content="Save As"/>
+
+        <Button x:Name="Button_CustomDialog" Grid.Row="2" Grid.Column="0" Height="30" Width="120" Click="CustomDialog_Click">Custom Dialog</Button>
+        <Button x:Name="Button_WhichOption" Grid.Row="2" Grid.Column="1" Height="30" IsEnabled="False" Click="WhichOption_Click" Margin="0,0,40,0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="120">Which Option</Button>
+
+        <TextBlock Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,65,0">Dialog Result</TextBlock>
+        <TextBox x:Name="DialogResult" Grid.Row="3" Grid.Column="1" Margin="0 0 20 0" Height="30"></TextBox>
+
+        <Button x:Name="Exit" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Height="30" Width="120" Click="Button_Exit">Exit</Button>
+    </Grid>
+
+</Window>
