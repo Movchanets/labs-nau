@@ -91,7 +91,7 @@ namespace lvm_1_4
            
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.DefaultExt = ".txt";
-            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|Lex files (*.lex)|*.lex|All files (*.*)|*.*";
             bool? result = openFileDialog.ShowDialog();
 
           
