@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOPLR6", "OOPLR6\OOPLR6.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lvm 1_4", "lvm 1_4\lvm 1_4.csproj", "{61348864-270A-4AEA-9816-364BECE8F430}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPLR7", "lab7\OOPLR7.csproj", "{1FBD90EB-25AB-402F-A153-256D59697FD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{61348864-270A-4AEA-9816-364BECE8F430}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61348864-270A-4AEA-9816-364BECE8F430}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61348864-270A-4AEA-9816-364BECE8F430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FBD90EB-25AB-402F-A153-256D59697FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FBD90EB-25AB-402F-A153-256D59697FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FBD90EB-25AB-402F-A153-256D59697FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FBD90EB-25AB-402F-A153-256D59697FD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

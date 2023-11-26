@@ -1,0 +1,31 @@
+﻿<Window x:Class="lab7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab7"
+        mc:Ignorable="d"
+        Title="OOPLR7" Height="450" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Content="Обчислення значення виразу" Margin="10" Click="CalculateExpBtn"/>
+        <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Content="Обчислення значення функції у точці" Margin="10" Click="CalculateFuncBtn"/>
+        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Content="Обчислення значення функціх в декількох точках" Margin="10" Click="CalculateFuncPointsBtn"/>
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Content="Завершити роботу програми" Margin="10" Click="CloseBtn"/>
+        <DataGrid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" IsReadOnly="True" x:Name="ResultGrid" AutoGenerateColumns="True"/>
+    </Grid>
+     
+</Window>
